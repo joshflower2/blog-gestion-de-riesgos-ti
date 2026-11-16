@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Joshua Flores">
+  <meta name="description" content="Guía de Joshua Flores para identificar, analizar y gestionar los riesgos de TI, con una matriz interactiva y un caso de ransomware.">
+  <meta name="theme-color" content="#172c25">
+  <title>Análisis y gestión de riesgos en TI | Joshua Flores</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="matrix.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#articulo">Ir al artículo</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio"><span class="mark" aria-hidden="true"></span> Riesgos en TI</a>
+      <nav aria-label="Secciones del blog">
+        <a href="#metodo">Método</a>
+        <a href="#matriz">Matriz</a>
+        <a href="#caso">Caso</a>
+        <a href="#video">Video</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero shell" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <p class="eyebrow">Tecnología de la información</p>
+        <h1 id="titulo">Análisis y gestión <em>de riesgos</em></h1>
+        <p class="deck">Cómo decidir qué proteger primero y comprobar si las medidas funcionan.</p>
+        <div class="byline"><span class="byline-initials" aria-hidden="true">JF</span><div><span>Por <strong>Joshua Flores</strong></span><time datetime="2026-11-15">15 de noviembre de 2026</time></div></div>
+        <a class="button" href="#articulo">Leer el artículo <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/circuito.webp" alt="Una lámina ámbar ilumina un microchip sobre una placa de circuitos verde oscuro." width="1440" height="960" fetchpriority="high">
+      </figure>
+    </section>
+
+    <article id="articulo">
+      <section class="shell section intro" aria-labelledby="riesgo-titulo">
+        <div class="section-lead">
+          <p class="eyebrow">Conceptos</p>
+          <h2 id="riesgo-titulo">¿Qué está en juego?</h2>
+        </div>
+        <div class="prose">
+          <p>El día que empieza la matrícula, el portal de una universidad se queda fuera de servicio. El equipo de TI descubre que un atacante usó una cuenta robada para cifrar la base de datos. Antes del ataque ya existía el riesgo de que ese escenario impidiera a los estudiantes matricularse a tiempo.</p>
+          <p>Un riesgo de TI describe cómo la incertidumbre puede afectar un objetivo que depende de la tecnología. Los efectos pueden comprometer la <strong>confidencialidad</strong> de los datos, su <strong>integridad</strong> o la <strong>disponibilidad</strong> del servicio. También hay riesgos operativos por errores de configuración, fallas de proveedores o interrupciones eléctricas. <a class="ref" href="#fuente-1" aria-label="Fuente 1">[1]</a> <a class="ref" href="#fuente-2" aria-label="Fuente 2">[2]</a></p>
+          <dl class="concepts">
+            <div><dt>Activo</dt><dd>El portal y los datos de matrícula que sostienen el servicio.</dd></div>
+            <div><dt>Amenaza</dt><dd>Un atacante que intenta usar credenciales robadas para desplegar ransomware.</dd></div>
+            <div><dt>Vulnerabilidad</dt><dd>Una cuenta con privilegios de administración que solo exige contraseña.</dd></div>
+            <div><dt>Impacto</dt><dd>Interrupción de la matrícula y posible pérdida o exposición de datos.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="method" id="metodo" aria-labelledby="metodo-titulo">
+        <div class="shell section split">
+          <div class="section-lead">
+            <p class="eyebrow">El proceso</p>
+            <h2 id="metodo-titulo">Del escenario a la decisión</h2>
+            <p class="side-note">ISO 31000 aporta un marco general. NIST SP 800-30 orienta la evaluación en sistemas de información. <a class="ref" href="#fuente-1" aria-label="Fuente 1">[1]</a> <a class="ref" href="#fuente-2" aria-label="Fuente 2">[2]</a></p>
+          </div>
+          <div>
+            <ol class="steps">
+              <li><div><h3>Definir el contexto</h3><p>Establecer el objetivo, los activos en alcance y el nivel de riesgo que puede aceptar la organización. Para el portal, importa cuánto tiempo puede quedar interrumpida la matrícula.</p></div></li>
+              <li><div><h3>Identificar</h3><p>Describir qué puede ocurrir, cómo ocurriría y qué servicio afectaría. Revisar inventarios, dependencias, permisos, incidentes y controles existentes.</p></div></li>
+              <li><div><h3>Analizar y evaluar</h3><p>Estimar la probabilidad y el impacto con evidencia disponible. Después, comparar el resultado con los criterios acordados para decidir la prioridad y documentar los supuestos.</p></div></li>
+              <li><div><h3>Tratar</h3><p>Evitar la actividad, reducir el riesgo con controles, compartir parte de sus consecuencias mediante un contrato o aceptar el riesgo con una decisión documentada.</p></div></li>
+              <li><div><h3>Monitorear y comunicar</h3><p>Asignar un responsable, medir la eficacia de los controles y reevaluar después de cambios o incidentes. Registrar las decisiones y comunicarlas a las personas afectadas.</p></div></li>
+            </ol>
+            <p class="framework"><strong>NIST CSF 2.0 en la práctica.</strong> Gobernar e identificar orientan las prioridades. Proteger y detectar ayudan a prevenir y descubrir incidentes. Responder y recuperar organizan la contención y la vuelta al servicio. <a class="ref" href="#fuente-3" aria-label="Fuente 3">[3]</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell section" id="matriz" aria-labelledby="matriz-titulo">
+        <div class="section-heading">
+          <p class="eyebrow">Herramienta interactiva</p>
+          <h2 id="matriz-titulo">Matriz de probabilidad e impacto</h2>
+          <p>Selecciona un valor para cada eje o pulsa una celda. La puntuación sirve para ordenar escenarios con una escala didáctica. Los criterios y umbrales deben ajustarse al servicio y a la evidencia disponible. <a class="ref" href="#fuente-2" aria-label="Fuente 2">[2]</a></p>
+        </div>
+
+        <div class="matrix-panel">
+          <div class="matrix-graphic">
+            <table id="risk-grid">
+              <caption>Impacto →</caption>
+              <thead><tr><th scope="col" class="axis-corner"><span class="visually-hidden">Probabilidad</span></th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th></tr></thead>
+              <tbody id="matrix-body"></tbody>
+            </table>
+          </div>
+          <div class="matrix-controls">
+            <div class="selection">
+              <label for="prob">Probabilidad
+                <select id="prob"><option value="1">1 · Rara</option><option value="2">2 · Improbable</option><option value="3">3 · Posible</option><option value="4" selected>4 · Probable</option><option value="5">5 · Muy probable</option></select>
+              </label>
+              <label for="impact">Impacto
+                <select id="impact"><option value="1">1 · Insignificante</option><option value="2">2 · Menor</option><option value="3">3 · Moderado</option><option value="4" selected>4 · Grave</option><option value="5">5 · Crítico</option></select>
+              </label>
+            </div>
+            <output class="result" id="result" for="prob impact" aria-live="polite"></output>
+            <div class="matrix-actions"><button type="button" data-scenario="initial">Antes de los controles</button><button type="button" data-scenario="residual">Con los controles</button></div>
+          </div>
+        </div>
+        <p class="legend"><span class="low">Bajo 1–4</span><span class="moderate">Moderado 5–9</span><span class="high">Alto 10–16</span><span class="critical">Crítico 17–25</span></p>
+        <noscript><p>En el caso del portal, la puntuación inicial es 4 × 4 = 16 (alto). Con los controles se estima 2 × 3 = 6 (moderado).</p></noscript>
+      </section>
+
+      <section class="case" id="caso" aria-labelledby="caso-titulo">
+        <div class="shell section">
+          <div class="case-layout">
+            <div>
+              <p class="eyebrow">Caso ficticio</p>
+              <h2 id="caso-titulo">Ransomware en un portal de matrícula</h2>
+              <p>El equipo entrevista a soporte y revisa la configuración. Encuentra accesos privilegiados sin autenticación multifactor y copias de seguridad que nunca se han restaurado en una prueba. Estima probabilidad 4 e impacto 4 para el escenario de interrupción y pérdida de datos.</p>
+              <div class="case-scores" aria-label="Comparación de puntuaciones">
+                <div><strong>16</strong><span>Riesgo inicial<br>Alto</span></div>
+                <span class="score-arrow" aria-hidden="true">→</span>
+                <div><strong>6</strong><span>Riesgo residual estimado<br>Moderado</span></div>
+              </div>
+            </div>
+            <figure class="case-figure">
+              <img src="assets/servidor.webp" alt="Una persona del equipo de TI revisa un gabinete de servidores con un portátil." width="1440" height="960" loading="lazy">
+              <figcaption>Ilustración del caso ficticio.</figcaption>
+            </figure>
+          </div>
+          <div class="case-plan">
+            <div><h3>Reducir la probabilidad</h3><p>Aplicar autenticación multifactor a cuentas privilegiadas, limitar permisos y vigilar accesos anómalos. La estimación baja a 2.</p></div>
+            <div><h3>Limitar el impacto</h3><p>Mantener copias cifradas fuera de línea y ensayar la recuperación en un entorno seguro. La estimación para la interrupción y pérdida de datos baja a 3. <a class="ref" href="#fuente-4" aria-label="Fuente 4">[4]</a></p></div>
+            <div><h3>Comprobar y reevaluar</h3><p>El responsable de TI verifica la cobertura de la autenticación multifactor y registra el tiempo de restauración antes de cada matrícula.</p></div>
+          </div>
+          <p class="case-note"><strong>Riesgo residual.</strong> Es el riesgo que queda tras aplicar los controles. La calificación de 6 depende de que las medidas funcionen. Una restauración exitosa ayuda a recuperar el servicio, mientras que una posible exposición de datos requiere su propia evaluación.</p>
+        </div>
+      </section>
+
+      <section class="shell section video-section" id="video" aria-labelledby="video-titulo">
+        <div class="section-heading">
+          <p class="eyebrow">Video explicativo</p>
+          <h2 id="video-titulo">¿Qué harías si cae el portal?</h2>
+          <p>El caso de ransomware, desde el acceso inicial hasta la comprobación de los controles.</p>
+        </div>
+        <video controls playsinline preload="none" poster="assets/video-portada.webp" width="1280" height="720" aria-labelledby="video-titulo">
+          <source src="assets/riesgos-en-ti.mp4" type="video/mp4">
+          <track kind="captions" src="assets/subtitulos.vtt" srclang="es" label="Español">
+          Tu navegador puede abrir el <a href="assets/riesgos-en-ti.mp4">archivo MP4</a> directamente.
+        </video>
+        <details>
+          <summary>Leer la transcripción</summary>
+          <div class="transcript">
+            <p>Empieza la matrícula. Un atacante usa una cuenta robada y cifra la base de datos. El portal deja de funcionar.</p>
+            <p>El equipo estima una probabilidad de cuatro y un impacto de cuatro. En esta matriz, el riesgo obtiene dieciséis puntos. Es alto.</p>
+            <p>La autenticación multifactor y los permisos mínimos dificultan el acceso. Las copias fuera de línea y las pruebas de restauración ayudan a recuperar el servicio.</p>
+            <p>Con estos controles, la estimación baja a seis. El equipo debe verificar la cobertura de la autenticación y cuánto tarda en restaurar el portal.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="sources" id="fuentes" aria-labelledby="fuentes-titulo">
+        <div class="shell section split">
+          <div class="section-lead">
+            <p class="eyebrow">Referencias</p>
+            <h2 id="fuentes-titulo">Fuentes consultadas</h2>
+          </div>
+          <ol>
+            <li id="fuente-1"><a href="https://www.iso.org/standard/31000">ISO 31000:2018 <span aria-hidden="true">↗</span></a><p>Directrices generales para la gestión del riesgo.</p></li>
+            <li id="fuente-2"><a href="https://csrc.nist.gov/pubs/sp/800/30/r1/final">NIST SP 800-30 Rev. 1 <span aria-hidden="true">↗</span></a><p>Guía para evaluar riesgos en sistemas de información.</p></li>
+            <li id="fuente-3"><a href="https://www.nist.gov/publications/spanish-translation-nist-cybersecurity-framework-20">NIST CSF 2.0 en español <span aria-hidden="true">↗</span></a><p>Marco para gestionar y comunicar riesgos de ciberseguridad.</p></li>
+            <li id="fuente-4"><a href="https://www.cisa.gov/sites/default/files/2025-03/StopRansomware-Guide%20508.pdf">CISA · Guía #StopRansomware <span aria-hidden="true">↗</span></a><p>Medidas de prevención, respuesta y recuperación ante ransomware.</p></li>
+          </ol>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><div><span class="mark" aria-hidden="true"></span><strong>Joshua Flores</strong></div><a href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a></div>
+  </footer>
+</body>
+</html>
